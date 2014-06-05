@@ -1,0 +1,5 @@
+s <- subset(outfile, State == "MD", select =c("Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack","Hospital.Name"))
+s[ , 1] <- as.numeric(s[ , 1])
+with(s,Hospital.Name[Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack == min(Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack, na.rm = TRUE)])
+z <- with(s,Hospital.Name[Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack == min(Hospital.30.Day.Death..Mortality..Rates.from.Heart.Attack, na.rm = TRUE)])
+sort(z)
